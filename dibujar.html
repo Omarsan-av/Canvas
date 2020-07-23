@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dibujar con canvas</title>
+      <style>
+         canvas 
+         {
+           background-color: lightblue;
+           display: none;
+           border: 4px solid gray;
+         }
+
+         h1 
+         {
+            text-align: center;
+         }
+
+         .dibujar
+         {
+            display: flex;
+            width: 90vw;
+            margin: 0 auto;
+         }
+
+         .herramientas 
+         {
+            margin: 0 auto;  
+            margin-top: 30px;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>¡ Vamos a dibujar !</h1>
+      <section class="dibujar">
+         <div>
+            <canvas id="areaDibujo"></canvas>
+         </div>
+         <div class="herramientas">
+            <label for="">Color</label>
+            <input type="color" id="paletaColores">
+         </div>
+      </section>
+
+      <input type="button" value="Dibujar" id=dibujar>
+      <script src="mouse.js"></script>
+   </body>
+</html>
