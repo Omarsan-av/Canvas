@@ -12,9 +12,12 @@ dibujo.addEventListener("mouseup", soltarMouse);
  
 function dibujar(color, xinicial, yinicial, xfinal, yfinal, lienzo)
 {
+    let grosor = document.getElementById("grosor");
+    let grosorLinea = grosor.value;
+
     lienzo.beginPath();
     lienzo.strokeStyle = color;
-    lienzo.lineWidth = 3;
+    lienzo.lineWidth = grosorLinea;
     lienzo.moveTo(xinicial,yinicial);
     lienzo.lineTo(xfinal,yfinal);
     lienzo.stroke();
@@ -23,19 +26,17 @@ function dibujar(color, xinicial, yinicial, xfinal, yfinal, lienzo)
 
 function areaCanvas(evento) 
 {
+    // let fondo = document.getElementById("fondo");
+    // let fondoCanvas = fondo.value;
 
-    dibujo.style.display = "block";
     boton.style.display = "none";
+    // dibujo.style.background = fondoCanvas;
+    dibujo.style.display = "block";
     dibujo.height = 500;
     dibujo.width = 1000;
       
     let alto = dibujo.height;
     let ancho = dibujo.width;
-        
-    // dibujar("grey",1,1,1,alto, papel);
-    // dibujar("grey",1,alto,ancho,alto, papel);
-    // dibujar("grey",ancho,1,1,1, papel);
-    // dibujar("grey",ancho,1,ancho,alto, papel); 
 }
 
 function pulsarMouse (evento)
@@ -47,7 +48,6 @@ function pulsarMouse (evento)
 
 function moverMouse (evento) 
 {  
-    // let colorLapiz = "blue";
     let color = document.getElementById("paletaColores");
     let colorLapiz = color.value;
     
