@@ -1,15 +1,30 @@
+
 let dibujo = document.getElementById("areaDibujo");
 let papel = dibujo.getContext("2d");
+dibujo.width = 1000;
+dibujo.height = 500;
+
+let fondo = "images/broly.jpg";
+let imagen = new Image();
+imagen.src = fondo;
+imagen.addEventListener("load", drawBackground);
+
 let x;
 let y;
 let estado = false;
 let boton = document.getElementById("dibujar");
 
+
+function drawBackground () 
+{
+   papel.drawImage(imagen, 0, 0);
+}
+
 boton.addEventListener("click", areaCanvas);
 dibujo.addEventListener("mousedown", pulsarMouse);
 dibujo.addEventListener("mousemove", moverMouse);
 dibujo.addEventListener("mouseup", soltarMouse);
- 
+
 function dibujar(color, xinicial, yinicial, xfinal, yfinal, lienzo)
 {
     let grosor = document.getElementById("grosor");
@@ -32,8 +47,8 @@ function areaCanvas(evento)
     boton.style.display = "none";
     // dibujo.style.background = fondoCanvas;
     dibujo.style.display = "block";
-    dibujo.height = 500;
-    dibujo.width = 1000;
+    // dibujo.height = 500;
+    // dibujo.width = 1000;
       
     let alto = dibujo.height;
     let ancho = dibujo.width;
