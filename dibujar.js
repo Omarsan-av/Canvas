@@ -4,9 +4,13 @@ let papel = dibujo.getContext("2d");
 dibujo.width = 1000;
 dibujo.height = 500;
 
-let fondo = "images/broly.png";
+let fondo = "images/emoji.png";
 let imagen = new Image();
+console.log(imagen);
 imagen.src = fondo;
+imagen.width= 
+imagen.style.display="block";
+imagen.style.margin = "auto";
 imagen.addEventListener("load", areaCanvas);
 // imagen.addEventListener("load", drawBackground);
 
@@ -25,7 +29,7 @@ let estado = false;
 
 function drawBackground () 
 {
-   papel.drawImage(imagen, 0, 0);
+   papel.drawImage(imagen, 400, 100);
 }
 
 howDraw = "mouse";
@@ -91,7 +95,7 @@ let color = document.getElementById("paletaColores");
 function moverMouse (evento) 
 {  
     let colorLapiz = color.value;
-    
+     
     if (estado) 
     {   // solo se dibujara si esta el click del mouse presionado
         dibujar(colorLapiz, x, y, evento.offsetX, evento.offsetY, papel);
